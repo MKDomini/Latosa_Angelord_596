@@ -145,4 +145,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+  
+  void showMessage(String s) {}
 }

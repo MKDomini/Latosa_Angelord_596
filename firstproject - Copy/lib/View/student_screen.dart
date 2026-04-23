@@ -1,5 +1,6 @@
-import '../controller/student_controller.dart';
-import '../model/student_model.dart';
+import 'package:firstproject/controller/student_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:firstproject/model/student_model.dart';
 
 class StudentPage extends StatefulWidget {
   const StudentPage({super.key});

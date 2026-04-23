@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:modelhandling/controller/usercontroller.dart';
-import 'package:modelhandling/model/user.dart';
+import 'package:firstproject/controller/user_controller.dart';
+import 'package:firstproject/model/user_model.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});

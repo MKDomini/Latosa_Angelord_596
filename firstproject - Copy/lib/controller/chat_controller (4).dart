@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:sample/model/chat_model.dart';
+import 'package:firstproject/model/chat_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class ChatController {

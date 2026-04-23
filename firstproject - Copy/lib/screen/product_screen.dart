@@ -1,7 +1,7 @@
 
+import 'package:firstproject/controller/product_controller.dart';
 import 'package:flutter/material.dart';
-import '../model/product_model.dart';
-import '../controller/product_controller.dart';
+import '../controller/product_controller.dart' hide Product;
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -33,7 +33,7 @@ class _ProductPageState extends State<ProductPage> {
     if(nameController.text.isEmpty || priceController.text.isEmpty || quantityController.text.isEmpty) {
       return;
     }
-    final productdata = Product(name: nameController.text, price: double.parse(priceController.text), quantity: int.parse(quantityController.text));
+    final productdata = Product(name: nameController.text, price: double.parse(priceController.text), quantity: int.parse(quantityController.text), id: 0);
     await controller.addProduct(productdata);
     loadProducts();
   }
@@ -91,7 +91,7 @@ class _ProductPageState extends State<ProductPage> {
                     children: [
                       const Text('Total Items'),
                       Text(
-                        '${controller.countTotalItems(products)}',
+                        '${controller.countTotalItems(products.cast<Product>())}',
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -103,7 +103,7 @@ class _ProductPageState extends State<ProductPage> {
                     children: [
                       const Text('Grand Total'),
                       Text(
-                        '₱${controller.calculateGrandTotal(products).toStringAsFixed(2)}',
+                        '₱${controller.calculateGrandTotal(products.cast<Product>()).toStringAsFixed(2)}',
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -130,7 +130,7 @@ class _ProductPageState extends State<ProductPage> {
                   ),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete, color: Colors.red),
-                    onPressed: () => deleteProduct(product.id!),
+                    onPressed: () => deleteProduct(product.id),
                   ),
                 );
               },

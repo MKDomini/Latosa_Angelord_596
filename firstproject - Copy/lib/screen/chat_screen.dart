@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:modelhandling/controller/chat_controller.dart';
-import 'package:modelhandling/model/chat_model.dart';
+import 'package:firstproject/controller/chat_controller%20%284%29.dart';
+import 'package:firstproject/model/chat_model.dart';
 
 
 class ChatPage extends StatefulWidget {
